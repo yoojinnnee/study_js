@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_example.html</title>
+    <style>
+        .container{
+            width: 768px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>목록</h1>
+        <button id="printBtn">출력하기</button>
+        <ul id="friendList">
+            
+        </ul>
+    </div>
+    <script>
+        let names=["최유진1", "최유진2", "최유진3", "최유진4", "최유진5"];
+        //버튼을 눌렀을때 위의 배열에 저장된 이름을 목록에 출력해보기
+        document.querySelector("#printBtn").addEventListener("click", ()=>{
+            for(let i=0;i<names.length ;i++){
+                let li=document.createElement("li");
+                li.innerText=names[i];
+                document.querySelector("#friendList").append(li);
+            }
+        });
+
+    </script>
+</body>
+</html>
