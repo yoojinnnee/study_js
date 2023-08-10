@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step05_DataType5.html</title>
+</head>
+<body>
+    <h1>javascript 데이터 type</h1>
+    <p> <strong>array</strong> type</p>
+    <script>
+        //배열에는 주로 한가지 type 의 데이터만 담는게 일반적이다.
+        let nums=[10, 20, 30, 40, 50];
+        let names=["최유진","박효빈","김시원","손혜림","정예린"];
+        let data=[true, true, false, false, true];
+
+        //회원 목록을 담고 싶다면
+        //회원 한명의 정보가 여러개의 데이터로 구성되어 있다 { }
+        let members=[
+            {num:1, name:"최유진", addr:"미국"},
+            {num:2, name:"박효빈", addr:"영국"},
+            {num:3, name:"김시원", addr:"캐나다"}
+        ];
+
+        //array type
+        let a=members;
+        //object type
+        let b=members[0];
+        //number type 1
+        let c=members[0].num;
+        //string type "최유진"
+        let d=members[0].name;
+        //string type "미국"
+        let e=members[0].addr;
+    </script>
+</body>
+</html>
