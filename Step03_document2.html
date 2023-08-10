@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step03_document2.html</title>
+    <style>
+        p{
+            color: blue;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            cursor: pointer;
+            transition: margin-left 0.4s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <h1>인라인 css 테스트</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis asperiores dolore non eius pariatur quia voluptas aliquid veritatis, debitis fugit? Dolores ab quod exercitationem itaque libero. Officiis asperiores vel distinctio?</p>
+    <div class="box" onclick="move()">눌러보셈</div>
+    <script>
+        /*
+            위의 box div 를 클릭해서 우측으로 100px 이동시키기
+            margin : 요소의 외부 여백
+        */
+
+        let move=()=>{
+            // 왼쪽 여백을 변경해서 요소를 오른쪽으로 이동
+            document.querySelector(".box").style.marginLeft="100px";
+        };
+    </script>
+</body>
+</html>

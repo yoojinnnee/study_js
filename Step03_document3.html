@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step03_document3.html</title>
+    <style>
+        p{
+            color: blue;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            cursor: pointer;
+            transition: margin-left 0.4s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <h1>인라인 css 테스트</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis asperiores dolore non eius pariatur quia voluptas aliquid veritatis, debitis fugit? Dolores ab quod exercitationem itaque libero. Officiis asperiores vel distinctio?</p>
+    <button onclick="reset()">Reset</button>
+    <div class="box" onclick="move()">눌러보셈</div>
+    <script>
+
+        //함수 안에서 사용할 변수를 페이지 로딩 시점에 미리 초기 값을 대입해서 만들어둔다.
+        let mLeft=0;
+
+        //실행할 code 를 함수안에 준비해둔다.
+        let move=()=>{
+            //global 영역에 선언된 변수 사용 가능 
+            mLeft = mLeft+100;
+            console.log(mLeft);
+            document.querySelector(".box").style.marginLeft = mLeft+"px";
+        };
+
+        let reset=()=>{
+            mLeft=0;
+            document.querySelector(".box").style.marginLeft = mLeft+"px";
+        };
+    </script>
+</body>
+</html>
