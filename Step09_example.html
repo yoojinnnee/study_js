@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step09_example.html</title>
+</head>
+<body>
+    <h1>setInterval, setTimeout 함수</h1>
+    <p>
+        <strong id="min">0</strong>분
+        <strong id="sec">0</strong>초
+    </p>
+    <script>
+
+        //아래의 setInterval 함수를 이용해서 위의 시간이 흘러가도록 하기
+
+        //Interval 함수 안에서 사용할 변수를 만들고 0 으로 초기화 하기 
+        let sec=0;
+        let min=0;
+        setInterval(()=>{
+            //초를 1씩 증가
+            sec++; // sec=sec+1 or  sec += 1
+            //만일 증가 시킨 초가 60 이면 분을 1씩 증가
+            if(sec == 60){
+                min++;
+                sec=0;//초를 0으로 초기화 
+            }
+            //초와 분을 위의 strong 요소의 innerText 로 각각 출력
+            document.querySelector("#min").innerText=min;
+            document.querySelector("#sec").innerText=sec;
+        }, 1000);
+
+        // 1초 후에 함수 실행
+        setTimeout(()=>{
+            console.log("setTimeout 에 전달한 함수가 호출");
+        }, 1000); // 1000 은 지연시간 (ms)
+
+        // 1초마다 함수 실행
+        setInterval(()=>{
+            console.log("setInterval 에 전달한 함수가 호출");
+        }, 1000);
+
+
+    </script>
+</body>
+</html>
