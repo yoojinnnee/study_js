@@ -56,7 +56,7 @@
             printMembers();
         });
 
-        //페이지 로딩시점에 이미 저장된 회원정보가 있다면 한번 출력해 준다.
+        //페이지 로딩시점에 이미 저장된 회원 정보가 있다면 한번 출력해 준다.
         if(localStorage.members){
             printMembers();
         }
@@ -90,7 +90,7 @@
             const members=JSON.parse(localStorage.members);
             //해당 배열에서 index 를 이용해서 삭제하고
             members.splice(index, 1);
-            //localStorage 에 json 문자열로 다시 저장한후 
+            //localStorage 에 json 문자열로 다시 저장한 후 
             localStorage.members=JSON.stringify(members);
             //출력하는 함수 호출
             printMembers();

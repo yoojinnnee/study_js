@@ -23,11 +23,11 @@
     <script>
         //원격지 서버로 부터 받아온 json 문자열이라고 가정
         const data=`[
-            {"num":1, "name":"김구라", "addr":"노량진"},
-            {"num":2, "name":"해골", "addr":"행신동"},
-            {"num":3, "name":"원숭이", "addr":"상도동"}
+            {"num":1, "name":"최유진", "addr":"대구"},
+            {"num":2, "name":"김시원", "addr":"서울"},
+            {"num":3, "name":"박효빈", "addr":"광주"}
         ]`;
-        //목록보기 버튼을 눌렀을때 회원 목록을 tbody 에 출력해 보세요.
+        //목록보기 버튼을 눌렀을때 회원 목록을 tbody 에 출력하기
         document.querySelector("#showBtn").addEventListener("click", ()=>{
             const arr=JSON.parse(data);
             //반복문 돌면서 tr 을 만들어서 tbody 에 추가하기
@@ -43,7 +43,7 @@
                     </tr>
                 `;
 
-                //tbody 에 추가한다.
+                //tbody 에 추가
                 document.querySelector("tbody").insertAdjacentHTML("beforeend", tr);
             }
         });
