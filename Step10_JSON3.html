@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step10_JSON3.html</title>
+</head>
+<body>
+    <button id="printBtn">출력하기</button>
+    <ul id="friends">
+        
+    </ul>
+    <script>
+        const data=`["딸기","수박","메론","참외","자두"]`;
+        /*
+            출력하기 버튼을 눌렀을때 ul 요소에 과일 목록 출력하기
+            - 배열 모양의 json 도 JSON.parse() 함수를 이용하면 실제 배열로 만들 수 있다.
+            - <li>유진</li> 이런식으로 li 요소를 만들어서 문자열을 출력한 후 ul 요소에 
+              추가해야한다.
+        */
+
+        document.querySelector("#printBtn").addEventListener("click", ()=>{
+            const arr=JSON.parse(data);
+            for(let i=0; i<arr.length; i++){
+                //li 요소를 만들어서 
+                let li=document.createElement("li");
+                //innerText 를 출력하고
+                li.innerText=arr[i];
+                //ul 에 추가하기
+                document.querySelector("#friends").append(li);
+            }
+        });
+    </script>
+</body>
+</html>

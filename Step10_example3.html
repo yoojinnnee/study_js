@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step10_example3.html</title>
+</head>
+<body>
+    <h1>localStorage 객체 활용해보기</h1>
+    <p>
+        웹브라우저의 javascript 실행환경에서는 해당 웹브라우저가 실행되는 기기의 파일 시스템에
+        접근을 할수가 없다 (파일 업로드를 위해 파일을 선택하는 경우는 제외)
+        따라서 파일시스템에 어떤 정보를 영구 저장을 할수가 없다. 
+    </p>
+    <input type="text" id="inputMsg" placeholder="메세지 입력...">
+    <button id="saveBtn">저장</button>
+    <button id="deleteBtn">삭제</button>
+    <p>
+        localStorage 에 저장된 메세지 : <strong id="result"></strong>
+    </p>
+    <script>
+        //페이지 로딩시점에 localStorage 에 savedMsg 라는 방에 저장된 문자열이 있으면
+        //id 가 result 인 요소에 저장된 문자열을 출력하고 
+        //저장된 메세지가 없으면 "저장된 메세지가 없습니다" 라고 출력하는 프로그래밍을 해 보세요.
+
+        if(localStorage.savedMsg != undefined){
+            //localStorage 에 savedMsg 라는 키값으로 저장된 문자열을 출력하기 
+            document.querySelector("#result").innerText = localStorage.savedMsg;
+        }else{
+            document.querySelector("#result").innerText = "저장된 메세지가 없습니다";
+        }
+
+        let savedMsg;
+
+        document.querySelector("#saveBtn").addEventListener("click", ()=>{
+            //입력한 문자열을 읽어와서  
+            let msg=document.querySelector("#inputMsg").value;
+            //전역변수에 저장하면 언제까지 유지가 될까?
+            savedMsg=msg;
+            //localStorage 에 저장해보기
+            localStorage.savedMsg=msg;
+        });
+
+        document.querySelector("#deleteBtn").addEventListener("click", ()=>{
+            //object 의 특정 key 값을 삭제하는 방법  
+            // delete 라는 예약어와 함께 삭제할 방을 참조하면 된다.
+            delete localStorage.savedMsg;
+        });
+    </script>
+</body>
+</html>
