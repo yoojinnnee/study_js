@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>배열과 반복문</h1>
+    <ul>
+        <li>li1</li>
+        <li>li2</li>
+        <li>li3</li>
+        <li>li4</li>
+        <li>li5</li>
+    </ul>
+    <button onclick="print()">출력하기</button>
+    <script>
+        // li 의 innerText 로 출력할 문자열이 배열에 준비됨
+        let names=["최유진","박효빈","김시원","손혜림","정예린"];
+
+        //출력하기 버튼을 누르면 names 배열에 저장된 문자열이 li 요소의 innerText 로 출력되도록 해보기
+
+        let print=()=>{
+            for(let i=0; i<5; i++){
+                document.querySelectorAll("li")[i].innerText=names[i];
+            }
+        };
+    </script>
+</body>
+</html>
